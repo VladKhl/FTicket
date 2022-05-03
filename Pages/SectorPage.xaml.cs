@@ -166,18 +166,34 @@ namespace FTicket.Pages
             MessageBoxResult messageBoxExit = MessageBox.Show($"Сектор {numsec}, ряд {((Button)sender).CommandParameter}, место {((Button)sender).Content}", "Приобрести", MessageBoxButton.YesNo);
             if (messageBoxExit == MessageBoxResult.Yes)
             {
-                Story story = new Story()
+                int cnt = 0;
+                var place = (from pla in App.ticketsdbEntities.Story select pla).ToList();
+                foreach (var item in place)
                 {
-                    idMatch = IDMatch,
-                    Sector = numsec,
-                    Row = Convert.ToInt32(((Button)sender).CommandParameter),
-                    Place = Convert.ToInt32(((Button)sender).Content),
-                    idClient = IDClient
-                };
-                App.ticketsdbEntities.Story.Add(story);
-                App.ticketsdbEntities.SaveChanges();
-                MessageBox.Show("Успешно");
-                ((Button)sender).IsEnabled = false;
+                    if (item.idClient == IDClient && item.idMatch == IDMatch)
+                    {
+                        cnt++;
+                    }
+                }
+                if (cnt < 2)
+                {
+                    Story story = new Story()
+                    {
+                        idMatch = IDMatch,
+                        Sector = numsec,
+                        Row = Convert.ToInt32(((Button)sender).CommandParameter),
+                        Place = Convert.ToInt32(((Button)sender).Content),
+                        idClient = IDClient
+                    };
+                    App.ticketsdbEntities.Story.Add(story);
+                    App.ticketsdbEntities.SaveChanges();
+                    MessageBox.Show("Успешно");
+                    ((Button)sender).IsEnabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Вы не можете приобрести больше двух билетов на один матч");
+                }
             }
         }
     }
