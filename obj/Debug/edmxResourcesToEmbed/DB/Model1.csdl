@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ticketsdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Aboniment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Client_Aboniment" FromRole="Aboniment" ToRole="Client" />
+    <Property Name="Used" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Surname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Middlename" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="idAb" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Aboniment" Relationship="Self.FK_Client_Aboniment" FromRole="Client" ToRole="Aboniment" />
+    <Property Name="idRole" Type="Int32" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Role" Relationship="ticketsdbModel.FK_Client_Role" FromRole="Client" ToRole="Role" />
+    <NavigationProperty Name="Story" Relationship="ticketsdbModel.FK_Story_Client" FromRole="Client" ToRole="Story" />
+  </EntityType>
+  <EntityType Name="Match">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Stage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="idTeam" Type="Int32" Nullable="false" />
+    <Property Name="DateAndTime" Type="DateTime" Precision="3" />
+    <Property Name="idTour" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Teams" Relationship="Self.FK_Match_Teams" FromRole="Match" ToRole="Teams" />
+    <NavigationProperty Name="Tournament" Relationship="Self.FK_Match_Tournament" FromRole="Match" ToRole="Tournament" />
+    <NavigationProperty Name="Story" Relationship="Self.FK_Story_Match" FromRole="Match" ToRole="Story" />
+  </EntityType>
+  <EntityType Name="Photo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Photo1" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Teams" Relationship="Self.FK_Teams_Photo" FromRole="Photo" ToRole="Teams" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Client" Relationship="ticketsdbModel.FK_Client_Role" FromRole="Role" ToRole="Client" />
+  </EntityType>
+  <EntityType Name="Story">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idMatch" Type="Int32" Nullable="false" />
+    <Property Name="Sector" Type="Int32" />
+    <Property Name="Row" Type="Int32" />
+    <Property Name="Place" Type="Int32" />
+    <NavigationProperty Name="Match" Relationship="Self.FK_Story_Match" FromRole="Story" ToRole="Match" />
+    <Property Name="idClient" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="ticketsdbModel.FK_Story_Client" FromRole="Story" ToRole="Client" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Teams">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="idPhoto" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Match" Relationship="Self.FK_Match_Teams" FromRole="Teams" ToRole="Match" />
+    <NavigationProperty Name="Photo" Relationship="Self.FK_Teams_Photo" FromRole="Teams" ToRole="Photo" />
+  </EntityType>
+  <EntityType Name="Tournament">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Match" Relationship="Self.FK_Match_Tournament" FromRole="Tournament" ToRole="Match" />
+  </EntityType>
+  <Association Name="FK_Client_Aboniment">
+    <End Role="Aboniment" Type="Self.Aboniment" Multiplicity="1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aboniment">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="idAb" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Match_Teams">
+    <End Role="Teams" Type="Self.Teams" Multiplicity="1" />
+    <End Role="Match" Type="Self.Match" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teams">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Match">
+        <PropertyRef Name="idTeam" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Match_Tournament">
+    <End Role="Tournament" Type="Self.Tournament" Multiplicity="1" />
+    <End Role="Match" Type="Self.Match" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tournament">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Match">
+        <PropertyRef Name="idTour" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Story_Match">
+    <End Role="Match" Type="Self.Match" Multiplicity="1" />
+    <End Role="Story" Type="Self.Story" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Match">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Story">
+        <PropertyRef Name="idMatch" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teams_Photo">
+    <End Role="Photo" Type="Self.Photo" Multiplicity="1" />
+    <End Role="Teams" Type="Self.Teams" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Photo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Teams">
+        <PropertyRef Name="idPhoto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ticketsdbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Aboniment" EntityType="Self.Aboniment" />
+    <EntitySet Name="Client" EntityType="Self.Client" />
+    <EntitySet Name="Match" EntityType="Self.Match" />
+    <EntitySet Name="Photo" EntityType="Self.Photo" />
+    <EntitySet Name="Role" EntityType="Self.Role" />
+    <EntitySet Name="Story" EntityType="Self.Story" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Teams" EntityType="Self.Teams" />
+    <EntitySet Name="Tournament" EntityType="Self.Tournament" />
+    <AssociationSet Name="FK_Client_Aboniment" Association="Self.FK_Client_Aboniment">
+      <End Role="Aboniment" EntitySet="Aboniment" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Match_Teams" Association="Self.FK_Match_Teams">
+      <End Role="Teams" EntitySet="Teams" />
+      <End Role="Match" EntitySet="Match" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Match_Tournament" Association="Self.FK_Match_Tournament">
+      <End Role="Tournament" EntitySet="Tournament" />
+      <End Role="Match" EntitySet="Match" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Story_Match" Association="Self.FK_Story_Match">
+      <End Role="Match" EntitySet="Match" />
+      <End Role="Story" EntitySet="Story" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teams_Photo" Association="Self.FK_Teams_Photo">
+      <End Role="Photo" EntitySet="Photo" />
+      <End Role="Teams" EntitySet="Teams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_Role" Association="ticketsdbModel.FK_Client_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Story_Client" Association="ticketsdbModel.FK_Story_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Story" EntitySet="Story" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_Client_Role">
+    <End Type="ticketsdbModel.Role" Role="Role" Multiplicity="1" />
+    <End Type="ticketsdbModel.Client" Role="Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="idRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Story_Client">
+    <End Type="ticketsdbModel.Client" Role="Client" Multiplicity="1" />
+    <End Type="ticketsdbModel.Story" Role="Story" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Story">
+        <PropertyRef Name="idClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

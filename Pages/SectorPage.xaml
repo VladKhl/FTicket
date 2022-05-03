@@ -1,0 +1,35 @@
+﻿<Page x:Class="FTicket.Pages.SectorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FTicket.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="900"
+      Title="SectorPage" Background="#353388">
+    <Grid x:Name="sectorgrd">
+        <Button Name="backbtn" Click="backbtn_Click" Content="НАЗАД" Width="50" Height="20" Foreground="White" FontWeight="Bold" Background="#353388" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Transparent"/>
+        <Label Content="22" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,30" VerticalAlignment="Top"/>
+        <Label Content="21" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,53" VerticalAlignment="Top"/>
+        <Label Content="20" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,76" VerticalAlignment="Top"/>
+        <Label Content="19" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,99" VerticalAlignment="Top"/>
+        <Label Content="18" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,122" VerticalAlignment="Top"/>
+        <Label Content="17" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,145" VerticalAlignment="Top"/>
+        <Label Content="16" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,168" VerticalAlignment="Top"/>
+        <Label Content="15" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,191" VerticalAlignment="Top"/>
+        <Label Content="14" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,214" VerticalAlignment="Top"/>
+        <Label Content="13" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,237" VerticalAlignment="Top"/>
+        <Label Content="12" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,260" VerticalAlignment="Top"/>
+        <Label Content="11" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,0,0,249" VerticalAlignment="Bottom"/>
+        <Label Content="10" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,0,0,226" VerticalAlignment="Bottom"/>
+        <Label Content="9" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,0,0,203" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"/>
+        <Label Content="8" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,0,0,180" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"/>
+        <Label Content="7" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,0,0,157" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"/>
+        <Label Content="6" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,0,0,134" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"/>
+        <Label Content="5" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,0,0,111" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"/>
+        <Label Content="4" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,0,0,88" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"/>
+        <Label Content="3" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,0,0,65" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"/>
+        <Label Content="2" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,0,0,42" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"/>
+        <Label Content="1" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,0,0,19" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"/>
+    </Grid>
+</Page>
