@@ -28,36 +28,37 @@ namespace FTicket.Pages
             InitializeComponent();
             IDClient = idClient;
             List<StoryMatchModel> matchModels = new List<StoryMatchModel>();
-            var matchs = (from story in App.ticketsdbEntities.Story 
-                          join match in App.ticketsdbEntities.Match on story.idMatch equals match.id where story.idMatch == match.id
+            var stories = (from story in App.ticketsdbEntities.Story 
                           where story.idClient == IDClient select story).ToList();
-            foreach (var match in matchs)
+            foreach (var story in stories)
             {
-                //StoryMatchModel matchModel = new StoryMatchModel();
-                //matchModel.Id = match.id;
-                //matchModel.Stage = (from story in App.ticketsdbEntities.Story
-                //                   join mat in App.ticketsdbEntities.Match on story.idMatch equals match.id
-                //                   where story.idMatch == match.id
-                //                   where story.idClient == IDClient
-                //                   select mat.Stage).First();
-                //matchModel.Team = ByteArrayToImage((  from story in App.ticketsdbEntities.Story
-                //                                      join mat in App.ticketsdbEntities.Match on story.idMatch equals match.id
-                //                                      where story.idMatch == match.id
-                //                                      join team in App.ticketsdbEntities.Teams on mat.idTeam equals team.id
-                //                                      where mat.idTeam == team.id
-                //                                      join pho in App.ticketsdbEntities.Photo on team.idPhoto equals pho.id
-                //                                      where team.id == match.idTeam
-                //                                      select pho.Photo1).First());
-                //matchModel.Date = match.DateAndTime.ToString().Substring(0, 10);
-                //matchModel.Time = match.DateAndTime.ToString().Substring(11, 5);
-                //matchModel.Tourn = (from mat in App.ticketsdbEntities.Match
-                //                    join tour in App.ticketsdbEntities.Tournament on mat.idTour equals tour.id
-                //                    where mat.idTour == match.idTour
-                //                    select tour.Name).First().ToUpper();
-                //matchModel.Sector = (int)match.Sector;
-                //matchModel.Row = (int)match.Row;
-                //matchModel.Place = (int)match.Place;
-                //matchModels.Add(matchModel);
+                StoryMatchModel matchModel = new StoryMatchModel();
+                matchModel.Id = story.id;
+                matchModel.Stage = (from mat in App.ticketsdbEntities.Match
+                                    where mat.id == story.idMatch
+                                    select mat.Stage).First().ToUpper();
+                matchModel.Team = ByteArrayToImage((from mat in App.ticketsdbEntities.Match
+                                                    where mat.id == story.idMatch
+                                                    join team in App.ticketsdbEntities.Teams on mat.idTeam equals team.id
+                                                    where mat.idTeam == team.id
+                                                    join pho in App.ticketsdbEntities.Photo on team.idPhoto equals pho.id
+                                                    where team.idPhoto == pho.id
+                                                    select pho.Photo1).First());
+                matchModel.Date = (from mat in App.ticketsdbEntities.Match
+                                   where mat.id == story.idMatch
+                                   select mat.DateAndTime).First().ToString().Substring(0, 10);
+                matchModel.Time = (from mat in App.ticketsdbEntities.Match
+                                   where mat.id == story.idMatch
+                                   select mat.DateAndTime).First().ToString().Substring(11, 5);
+                matchModel.Tourn = (from mat in App.ticketsdbEntities.Match
+                                    where mat.id == story.idMatch
+                                    join tour in App.ticketsdbEntities.Tournament on mat.idTour equals tour.id
+                                    where tour.id == mat.idTour
+                                    select tour.Name).First().ToUpper();
+                matchModel.Sector = (int)story.Sector;
+                matchModel.Row = (int)story.Row;
+                matchModel.Place = (int)story.Place;
+                matchModels.Add(matchModel);
             }
             matchlst.ItemsSource = matchModels;
         }

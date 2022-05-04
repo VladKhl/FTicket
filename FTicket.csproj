@@ -227,6 +227,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Images\backtick.png" />
     <Resource Include="Images\stadium.PNG" />
     <Resource Include="Images\cska.png" />
     <Resource Include="Images\regim.PNG" />

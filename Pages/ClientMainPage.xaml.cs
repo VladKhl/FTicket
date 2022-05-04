@@ -69,5 +69,10 @@ namespace FTicket.Pages
             if (messageBoxExit == MessageBoxResult.Yes)
             NavigationService.Navigate(new StartPage());
         }
+
+        private void storybtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new StoryPage(IDClient));
+        }
     }
 }

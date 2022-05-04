@@ -27,7 +27,7 @@ namespace FTicket.Windows
         int pRow;
         int pPlace;
         bool buycheck = false;
-        public event Action Tankist;
+        public event Action TicketBuy;
 
         public SaleWin(int numsec, int row, int place, int idmatch, int idclient)
         {
@@ -81,7 +81,7 @@ namespace FTicket.Windows
                           select sto).First();
                 App.ticketsdbEntities.Story.Remove(gg);
                 App.ticketsdbEntities.SaveChanges();
-                Tankist?.Invoke();
+                TicketBuy?.Invoke();
             }
             else
             {

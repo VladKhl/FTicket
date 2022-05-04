@@ -63,5 +63,6 @@
                 </ListView.ItemTemplate>
             </ListView>
         <Button Name="backbtn" Click="backbtn_Click" Content="НАЗАД" Width="50" Height="20" Foreground="White" FontWeight="Bold" Background="#353388" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Transparent"/>
+        <Button Name="storybtn" Click="storybtn_Click" Content="ИСТОРИЯ ПОКУПОК" Width="140" Height="20" Foreground="White" FontWeight="Bold" Background="#353388" HorizontalAlignment="Right" VerticalAlignment="Top" BorderBrush="Transparent"/>
     </Grid>
 </Page>
