@@ -177,6 +177,7 @@ namespace FTicket.Pages
             {
                 SaleWin saleWin = new SaleWin(numsec, Convert.ToInt32(((Button)sender).CommandParameter), Convert.ToInt32(((Button)sender).Content), IDMatch, IDClient);
                 ((Button)sender).IsEnabled = false;
+                saleWin.Tankist += (()=>((Button)sender).IsEnabled = true);
                 saleWin.Show();
             }
             else

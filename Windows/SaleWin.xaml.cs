@@ -27,6 +27,7 @@ namespace FTicket.Windows
         int pRow;
         int pPlace;
         bool buycheck = false;
+        public event Action Tankist;
 
         public SaleWin(int numsec, int row, int place, int idmatch, int idclient)
         {
@@ -36,6 +37,9 @@ namespace FTicket.Windows
             IDMatch = idmatch;
             pRow = row;
             pPlace = place;
+            seclab.Content = numsec;
+            rowlab.Content = pRow;
+            placelab.Content = pPlace;
             System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
             timer.Tick += new EventHandler(timerTick);
             timer.Interval = new TimeSpan(0, 0, 30);
@@ -77,6 +81,7 @@ namespace FTicket.Windows
                           select sto).First();
                 App.ticketsdbEntities.Story.Remove(gg);
                 App.ticketsdbEntities.SaveChanges();
+                Tankist?.Invoke();
             }
             else
             {
