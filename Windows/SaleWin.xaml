@@ -1,0 +1,20 @@
+﻿<Window x:Class="FTicket.Windows.SaleWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FTicket.Windows"
+        mc:Ignorable="d"
+        Title="SaleWin" Height="200" Width="200" Background="White" ResizeMode="NoResize" Closed="Window_Closed">
+    <Grid>
+        <Label Content="Сектор" Foreground="#353388" FontSize="15" FontWeight="Bold"/>
+        <Label x:Name="seclab" Foreground="#353388" FontSize="15" FontWeight="Bold" Margin="70,0"/>
+        <Label Content="Ряд" Foreground="#353388" FontSize="15" FontWeight="Bold" Margin="0,30"/>
+        <Label x:Name="rowlab" Foreground="#353388" FontSize="15" FontWeight="Bold" Margin="70,30"/>
+        <Label Content="Место" Foreground="#353388" FontSize="15" FontWeight="Bold" Margin="0,60"/>
+        <Label x:Name="placelab" Foreground="#353388" FontSize="15" FontWeight="Bold" Margin="70,60"/>
+        <Label Content="*ожидает оплаты, забронировано на 30 секунд" Foreground="#353388" FontSize="7" VerticalAlignment="Bottom" Margin="0,0,0,30"/>
+        <Button x:Name="buybtn" Click="buybtn_Click" Content="ОПЛАТИТЬ" Background="#353388" Foreground="White"
+                FontSize="15" FontWeight="Bold" Height="30" VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>

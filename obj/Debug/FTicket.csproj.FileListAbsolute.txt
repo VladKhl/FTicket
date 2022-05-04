@@ -34,3 +34,7 @@ C:\Users\Username\source\repos\FTicket\FTicket\obj\Debug\Pages\StadiumPage.g.cs
 C:\Users\Username\source\repos\FTicket\FTicket\obj\Debug\Pages\StadiumPage.baml
 C:\Users\Username\source\repos\FTicket\FTicket\obj\Debug\Pages\SectorPage.g.cs
 C:\Users\Username\source\repos\FTicket\FTicket\obj\Debug\Pages\SectorPage.baml
+C:\Users\Username\source\repos\FTicket\FTicket\obj\Debug\Pages\StoryPage.g.cs
+C:\Users\Username\source\repos\FTicket\FTicket\obj\Debug\Pages\StoryPage.baml
+C:\Users\Username\source\repos\FTicket\FTicket\obj\Debug\Windows\SaleWin.g.cs
+C:\Users\Username\source\repos\FTicket\FTicket\obj\Debug\Windows\SaleWin.baml

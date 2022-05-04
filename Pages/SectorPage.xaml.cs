@@ -1,4 +1,5 @@
 ﻿using FTicket.DB;
+using FTicket.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -163,37 +164,24 @@ namespace FTicket.Pages
 
         private void btn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult messageBoxExit = MessageBox.Show($"Сектор {numsec}, ряд {((Button)sender).CommandParameter}, место {((Button)sender).Content}", "Приобрести", MessageBoxButton.YesNo);
-            if (messageBoxExit == MessageBoxResult.Yes)
+            int cnt = 0;
+            var place = (from pla in App.ticketsdbEntities.Story select pla).ToList();
+            foreach (var item in place)
             {
-                int cnt = 0;
-                var place = (from pla in App.ticketsdbEntities.Story select pla).ToList();
-                foreach (var item in place)
+                if (item.idClient == IDClient && item.idMatch == IDMatch)
                 {
-                    if (item.idClient == IDClient && item.idMatch == IDMatch)
-                    {
-                        cnt++;
-                    }
+                    cnt++;
                 }
-                if (cnt < 2)
-                {
-                    Story story = new Story()
-                    {
-                        idMatch = IDMatch,
-                        Sector = numsec,
-                        Row = Convert.ToInt32(((Button)sender).CommandParameter),
-                        Place = Convert.ToInt32(((Button)sender).Content),
-                        idClient = IDClient
-                    };
-                    App.ticketsdbEntities.Story.Add(story);
-                    App.ticketsdbEntities.SaveChanges();
-                    MessageBox.Show("Успешно");
-                    ((Button)sender).IsEnabled = false;
-                }
-                else
-                {
-                    MessageBox.Show("Вы не можете приобрести больше двух билетов на один матч");
-                }
+            }
+            if (cnt < 2)
+            {
+                SaleWin saleWin = new SaleWin(numsec, Convert.ToInt32(((Button)sender).CommandParameter), Convert.ToInt32(((Button)sender).Content), IDMatch, IDClient);
+                ((Button)sender).IsEnabled = false;
+                saleWin.Show();
+            }
+            else
+            {
+                MessageBox.Show("Вы не можете приобрести больше двух билетов на один матч");
             }
         }
     }
