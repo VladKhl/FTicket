@@ -6,9 +6,83 @@
       xmlns:local="clr-namespace:FTicket.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="900"
-      Title="AdmMainPage">
+      Title="AdmMainPage" Background="#353388">
+    <Grid>
+        <Button Name="backbtn" Click="backbtn_Click" Content="НАЗАД" Width="50" Height="20" Foreground="White" FontWeight="Bold" Background="#353388" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Transparent"/>
+        <Border Background="White" CornerRadius="10" Margin="30,30,0,30" HorizontalAlignment="Left">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20" />
+            </Border.Effect>
+            <Canvas Height="500" Width="400" HorizontalAlignment="Left">
+                <TextBox
+            x:Name="stagetxt"
+            Width="178"
+            Height="34"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="White"
+            BorderThickness="1"
+            FontFamily="Arial Rounded MT Bold"
+            FontSize="20"
+            BorderBrush="Black"
+            Foreground="Black" Canvas.Left="19" Canvas.Top="64"  />
+                <Label Content="Добавить матч" FontSize="20" FontWeight="Bold" Canvas.Left="120" Canvas.Top="-8"/>
+                <Label Content="Стадия турнира" FontSize="20" FontWeight="Bold" Canvas.Left="203" Canvas.Top="62" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <ComboBox Name="teamcb" FontSize="20" FontWeight="Bold" Canvas.Left="19" Canvas.Top="118" HorizontalAlignment="Left" VerticalAlignment="Center" Width="176"/>
+                <Label Content="Команда-соперник" FontSize="20" FontWeight="Bold" Canvas.Left="202" Canvas.Top="116" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <DatePicker
+                x:Name="datematch"
+                Canvas.Left="19"
+                Canvas.Top="168"
+                Width="175"
+                Height="32"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontFamily="Arial Rounded MT Bold"
+                FontSize="22"
+                Foreground="Black" 
+                BorderBrush="Black"
+                BorderThickness="1" RenderTransformOrigin="0.418,0.425"/>
+                <Label Content="Команда-соперник" FontSize="20" FontWeight="Bold" Canvas.Left="202" Canvas.Top="116" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Label Content="Дата матча" FontSize="20" FontWeight="Bold" Canvas.Left="204" Canvas.Top="165" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox
+                    x:Name="timamatch"
+                    Width="178"
+                    Height="34"
+                    Background="White"
+                    BorderThickness="1"
+                    FontFamily="Arial Rounded MT Bold"
+                    FontSize="20"
+                    BorderBrush="Black"
+                    Foreground="Black" Canvas.Left="18" Canvas.Top="218"  HorizontalAlignment="Left" VerticalAlignment="Top"  />
+                <Label Content="Время матча" FontSize="20" FontWeight="Bold" Canvas.Left="204" Canvas.Top="215" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <ComboBox x:Name="tourn" FontSize="20" FontWeight="Bold" Canvas.Left="20" Canvas.Top="276" Width="176" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="Турнир" FontSize="20" FontWeight="Bold" Canvas.Left="203" Canvas.Top="274" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="addmatchbtn" Click="addmatchbtn_Click" Content="ДОБАВИТЬ МАТЧ" Width="196" Height="39" Foreground="White" FontWeight="Bold" Background="#353388" BorderBrush="Transparent" Canvas.Left="20" Canvas.Top="332" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
-    <Grid Background="White">
-        <TextBlock Text="Админ"></TextBlock>
+            </Canvas>
+        </Border>
+        <Border Background="White" CornerRadius="10" Margin="460,30,0,30" HorizontalAlignment="Left">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20" />
+            </Border.Effect>
+            <Canvas Height="500" Width="400" HorizontalAlignment="Right">
+                <TextBox
+            x:Name="abtxt"
+            Width="165"
+            Height="34"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Background="White"
+            BorderThickness="1"
+            FontFamily="Arial Rounded MT Bold"
+            FontSize="25"
+            BorderBrush="Black"
+            Foreground="Black" Canvas.Left="20" Canvas.Top="63"  />
+                <Label Content="Добавить абонемент" FontSize="20" FontWeight="Bold" Canvas.Left="89" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="-7"/>
+                <Label Content="Номер абонемента" FontSize="20" FontWeight="Bold" Canvas.Left="194" Canvas.Top="62" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="addabbtn" Click="addabbtn_Click" Content="ДОБАВИТЬ АБОНЕМЕНТ" Width="196" Height="39" Foreground="White" FontWeight="Bold" Background="#353388" BorderBrush="Transparent" HorizontalAlignment="Left" Canvas.Left="18" Canvas.Top="129" VerticalAlignment="Top"/>
+            </Canvas>
+        </Border>
     </Grid>
 </Page>
