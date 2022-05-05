@@ -40,6 +40,7 @@ namespace FTicket.Windows
             seclab.Content = numsec;
             rowlab.Content = pRow;
             placelab.Content = pPlace;
+            pricelab.Content = 1500;
             System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
             timer.Tick += new EventHandler(timerTick);
             timer.Interval = new TimeSpan(0, 0, 30);
@@ -50,7 +51,8 @@ namespace FTicket.Windows
                 Sector = numsec,
                 Row = pRow,
                 Place = pPlace,
-                idClient = IDClient
+                idClient = IDClient,
+                Price = Convert.ToInt32(pricelab.Content)
             };
             App.ticketsdbEntities.Story.Add(story);
             App.ticketsdbEntities.SaveChanges();

@@ -60,6 +60,7 @@
           <Property Name="Row" Type="int" />
           <Property Name="Place" Type="int" />
           <Property Name="idClient" Type="int" Nullable="false" />
+          <Property Name="Price" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -279,6 +280,7 @@
           <NavigationProperty Name="Match" Relationship="Self.FK_Story_Match" FromRole="Story" ToRole="Match" />
           <Property Name="idClient" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Client" Relationship="ticketsdbModel.FK_Story_Client" FromRole="Story" ToRole="Client" />
+          <Property Name="Price" Type="Int32" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -490,6 +492,7 @@
           <EntitySetMapping Name="Story">
             <EntityTypeMapping TypeName="ticketsdbModel.Story">
               <MappingFragment StoreEntitySet="Story">
+                <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="idClient" ColumnName="idClient" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="idMatch" ColumnName="idMatch" />

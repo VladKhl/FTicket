@@ -44,7 +44,10 @@ namespace FTicket.Pages
                                      join tour in App.ticketsdbEntities.Tournament on mat.idTour equals tour.id
                                      where mat.idTour == match.idTour
                                      select tour.Name).First().ToUpper();
-                matchModels.Add(matchModel);
+                if (match.DateAndTime > DateTime.Now)
+                {
+                    matchModels.Add(matchModel);
+                }
             }
             matchlst.ItemsSource = matchModels;
         }

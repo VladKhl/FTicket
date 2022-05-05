@@ -24,6 +24,9 @@ namespace FTicket.Pages
         public AdmMainPage()
         {
             InitializeComponent();
+            var today = DateTime.Today;
+            var tomorrow = today.AddDays(1);
+            datematch.DisplayDateStart = tomorrow;
             var tem = App.ticketsdbEntities.Teams.ToList();
             teamcb.ItemsSource = tem;
             teamcb.DisplayMemberPath = "Name";
@@ -87,9 +90,9 @@ namespace FTicket.Pages
                         cnt++;
                     }
                 }
-                if (cnt > 0)
+                if (cnt > 0 || datematch.SelectedDate <= datematch.DisplayDateStart)
                 {
-                    MessageBox.Show("Некорректная дата, в этот день уже есть матч");
+                    MessageBox.Show("Некорректная дата");
                 }
                 else
                 {

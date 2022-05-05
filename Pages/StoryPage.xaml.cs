@@ -58,6 +58,7 @@ namespace FTicket.Pages
                 matchModel.Sector = (int)story.Sector;
                 matchModel.Row = (int)story.Row;
                 matchModel.Place = (int)story.Place;
+                matchModel.Price = (int)story.Price;
                 matchModels.Add(matchModel);
             }
             matchlst.ItemsSource = matchModels;

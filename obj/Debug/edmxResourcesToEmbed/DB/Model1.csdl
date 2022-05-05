@@ -66,6 +66,7 @@
     <NavigationProperty Name="Match" Relationship="Self.FK_Story_Match" FromRole="Story" ToRole="Match" />
     <Property Name="idClient" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Client" Relationship="ticketsdbModel.FK_Story_Client" FromRole="Story" ToRole="Client" />
+    <Property Name="Price" Type="Int32" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>

@@ -54,6 +54,7 @@
     <EntitySetMapping Name="Story">
       <EntityTypeMapping TypeName="ticketsdbModel.Story">
         <MappingFragment StoreEntitySet="Story">
+          <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="idClient" ColumnName="idClient" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="idMatch" ColumnName="idMatch" />

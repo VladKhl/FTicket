@@ -18,7 +18,6 @@ namespace FTicket.Model
         public int Sector { get; set; }
         public int Row { get; set; }
         public int Place { get; set; }
-
-
+        public int Price { get; set; }
     }
 }

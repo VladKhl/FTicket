@@ -55,6 +55,7 @@
     <Property Name="Row" Type="int" />
     <Property Name="Place" Type="int" />
     <Property Name="idClient" Type="int" Nullable="false" />
+    <Property Name="Price" Type="int" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>

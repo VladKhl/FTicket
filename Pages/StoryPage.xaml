@@ -60,14 +60,17 @@
                                 Width="500"
                                 TextAlignment="Center" 
                                 Background="Transparent"/>
-                            <Label Content="Сектор" FontSize="15" FontWeight="Bold" Margin="135,150"/>
-                            <Label Content="{Binding Sector}" FontSize="15" FontWeight="Bold" Margin="191,150"/>
-                            <Label Content="," FontSize="15" FontWeight="Bold" Margin="218,150"/>
-                            <Label Content="{Binding Row}" FontSize="15" FontWeight="Bold" Margin="228,150"/>
-                            <Label Content="Ряд" FontSize="15" FontWeight="Bold" Margin="250,150"/>
-                            <Label Content="," FontSize="15" FontWeight="Bold" Margin="279,150"/>
-                            <Label Content="{Binding Place}" FontSize="15" FontWeight="Bold" Margin="340,150"/>
-                            <Label Content="Место" FontSize="15" FontWeight="Bold" Margin="290,150"/>
+                            <Label Content="Сектор" FontSize="15" FontWeight="Bold" Margin="100,150"/>
+                            <Label Content="{Binding Sector}" FontSize="15" FontWeight="Bold" Margin="156,150"/>
+                            <Label Content="," FontSize="15" FontWeight="Bold" Margin="183,150"/>
+                            <Label Content="{Binding Row}" FontSize="15" FontWeight="Bold" Margin="193,150"/>
+                            <Label Content="Ряд" FontSize="15" FontWeight="Bold" Margin="215,150"/>
+                            <Label Content="," FontSize="15" FontWeight="Bold" Margin="244,150"/>
+                            <Label Content="{Binding Place}" FontSize="15" FontWeight="Bold" Margin="305,150"/>
+                            <Label Content="Место" FontSize="15" FontWeight="Bold" Margin="255,150"/>
+                            <Label Content="," FontSize="15" FontWeight="Bold" Margin="323,150"/>
+                            <Label Content="{Binding Price}" FontSize="15" FontWeight="Bold" Margin="330,150"/>
+                            <Label Content="РУБ" FontSize="15" FontWeight="Bold" Margin="368,150"/>
                         </Canvas>
                     </Border>
                 </DataTemplate>

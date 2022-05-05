@@ -20,6 +20,7 @@ namespace FTicket.DB
         public Nullable<int> Row { get; set; }
         public Nullable<int> Place { get; set; }
         public int idClient { get; set; }
+        public Nullable<int> Price { get; set; }
     
         public virtual Match Match { get; set; }
         public virtual Client Client { get; set; }

@@ -14,7 +14,7 @@
             <ImageBrush ImageSource="/Images/mainim.PNG" Stretch="Fill"/>
         </Grid.Background>
         <TextBox Name="login" MouseEnter="login_MouseEnter" HorizontalAlignment="Center" Width="250" Height="40" BorderBrush="Black" BorderThickness="2" Text="ЛОГИН" FontWeight="Bold" FontSize="25" TextAlignment="Center"/>
-        <TextBox Name="password" MouseEnter="password_MouseEnter" HorizontalAlignment="Center" Width="250" Height="40" BorderBrush="Black" BorderThickness="2" Margin="0,120,0,0" Text="ПАРОЛЬ" FontWeight="Bold" FontSize="25" TextAlignment="Center"/>
+        <PasswordBox Name="password" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="250" Height="40" BorderBrush="Black" BorderThickness="2" Margin="0,120,0,0" FontWeight="Bold" FontSize="25"/>
         <Button Name="SignIn" Content="ВХОД" Foreground="White" HorizontalAlignment="Center" Height="45" Width="250" Margin="0,393,0,120" BorderBrush="Black" FontWeight="Bold" FontSize="25" Background="#DA001A" Click="SignIn_Click"/>
         <Button Name="Reg"  Content="РЕГИСТРАЦИЯ" Foreground="White" HorizontalAlignment="Center" Height="45" Width="250" Margin="0,430,0,50" BorderBrush="Black" FontWeight="Bold" FontSize="25" Background="#DA001A" Click="Reg_Click"/>
     </Grid>
