@@ -7,16 +7,12 @@
         mc:Ignorable="d"
         Title="SaleWin" Height="250" Width="200" Background="White" ResizeMode="NoResize" Closed="Window_Closed">
     <Grid>
-        <Label Content="Сектор" Foreground="#353388" FontSize="15" FontWeight="Bold"/>
-        <Label x:Name="seclab" Foreground="#353388" FontSize="15" FontWeight="Bold" Margin="70,0"/>
-        <Label Content="Ряд" Foreground="#353388" FontSize="15" FontWeight="Bold" Margin="0,30"/>
-        <Label x:Name="rowlab" Foreground="#353388" FontSize="15" FontWeight="Bold" Margin="70,30"/>
-        <Label Content="Место" Foreground="#353388" FontSize="15" FontWeight="Bold" Margin="0,60"/>
-        <Label x:Name="placelab" Foreground="#353388" FontSize="15" FontWeight="Bold" Margin="70,60"/>
-        <Label Content="Цена" Foreground="#353388" FontSize="15" FontWeight="Bold" Margin="0,90,0,64"/>
-        <Label x:Name="pricelab" Foreground="#353388" FontSize="15" FontWeight="Bold" Margin="70,90"/>
-        <Label Content="*ожидает оплаты, забронировано на 30 секунд" Foreground="#353388" FontSize="7" VerticalAlignment="Bottom" Margin="0,0,0,30"/>
-        <Button x:Name="buybtn" Click="buybtn_Click" Content="ОПЛАТИТЬ" Background="#353388" Foreground="White"
+        <Label Content="Ряд" Foreground="Black" FontSize="15" FontWeight="Bold" Margin="0,30"/>
+        <Label x:Name="rowlab" Foreground="Black" FontSize="15" FontWeight="Bold" Margin="70,30"/>
+        <Label Content="Место" Foreground="Black" FontSize="15" FontWeight="Bold" Margin="0,60"/>
+        <Label x:Name="placelab" Foreground="Black" FontSize="15" FontWeight="Bold" Margin="70,60"/>
+        <Label Content="*ожидает оплаты, забронировано на 30 секунд" Foreground="Black" FontSize="7" VerticalAlignment="Bottom" Margin="0,0,0,30"/>
+        <Button x:Name="buybtn" Click="buybtn_Click" Content="ОПЛАТИТЬ" Background="Black" Foreground="White"
                 FontSize="15" FontWeight="Bold" Height="30" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>

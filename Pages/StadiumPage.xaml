@@ -8,10 +8,6 @@
       d:DesignHeight="600" d:DesignWidth="900"
       Title="StadiumPage">
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="/Images/stadium.PNG" Stretch="Fill"/>
-        </Grid.Background>
-        <Image Source="/Images/cska.png" Height="90" Width="90" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,30, 130,0"/>
         <Label Content="x" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,40, 100,0" FontSize="40"/>
         <Image x:Name="sopimg"  Height="90" Width="90" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,30, 10,0"/>
         <Button Name="backbtn" Click="backbtn_Click" Content="НАЗАД" Width="50" Height="20" Foreground="White" FontWeight="Bold" Background="#353388" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Transparent"/>

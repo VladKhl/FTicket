@@ -9,7 +9,7 @@
       Title="RegistrationPage">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Images/regim.PNG" Stretch="Fill"/>
+            <ImageBrush ImageSource="/Images/t2.png" Stretch="Fill"/>
         </Grid.Background>
         <TextBox MouseEnter="login_MouseEnter" Name="login" Margin="0,0,0,450" HorizontalAlignment="Center" Width="250" Height="40" BorderBrush="Black" BorderThickness="2" Text="ЛОГИН" FontWeight="Bold" FontSize="25" TextAlignment="Center"/>
         <TextBox MouseEnter="password_MouseEnter"  Name="password" Margin="0,0,0,330" HorizontalAlignment="Center" Width="250" Height="40" BorderBrush="Black" BorderThickness="2" Text="ПАРОЛЬ" FontWeight="Bold" FontSize="25" TextAlignment="Center"/>
@@ -17,7 +17,7 @@
         <TextBox MouseEnter="name_MouseEnter"  Name="name" Text="ИМЯ" Margin="0,0,0,90" HorizontalAlignment="Center" Width="250" Height="40" BorderBrush="Black" BorderThickness="2" FontWeight="Bold" FontSize="25" TextAlignment="Center"/>
         <TextBox MouseEnter="middlename_MouseEnter"  Name="middlename" Text="ОТЧЕСТВО" Margin="0,30,0,0" HorizontalAlignment="Center" Width="250" Height="40" BorderBrush="Black" BorderThickness="2" FontWeight="Bold" FontSize="25" TextAlignment="Center"/>
         <TextBox MouseEnter="aboniment_MouseEnter"  Name="aboniment" Text="АБОНЕМЕНТ" Margin="0,150,0,0" HorizontalAlignment="Center" Width="250" Height="40" BorderBrush="Black" BorderThickness="2" FontWeight="Bold" FontSize="25" TextAlignment="Center"/>
-        <Button Name="Reg"  Content="ЗАРЕГИСТРИРОВАТЬСЯ" Foreground="White" HorizontalAlignment="Center" Height="45" Width="250" Margin="0,430,0,50" BorderBrush="Black" FontWeight="Bold" FontSize="20" Background="#DA001A" Click="Reg_Click"/>
-        <Button Name="backbtn" Click="backbtn_Click" Content="НАЗАД" Width="50" Height="20" Foreground="White" FontWeight="Bold" Background="#353388" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Transparent"/>
+        <Button Name="Reg"  Content="ЗАРЕГИСТРИРОВАТЬСЯ" Foreground="White" HorizontalAlignment="Center" Height="45" Width="250" Margin="0,430,0,50" BorderBrush="Black" FontWeight="Bold" FontSize="20" Background="#ffc500" Click="Reg_Click"/>
+        <Button Name="backbtn" Click="backbtn_Click" Content="НАЗАД" Width="50" Height="20" Foreground="White" FontWeight="Bold" Background="#ffc500" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Transparent"/>
     </Grid>
 </Page>

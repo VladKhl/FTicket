@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:FTicket.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="900"
-      Title="SectorPage" Background="#353388">
+      Title="SectorPage" Background="#ffc500">
     <Grid x:Name="sectorgrd">
         <Button Name="backbtn" Click="backbtn_Click" Content="НАЗАД" Width="50" Height="20" Foreground="White" FontWeight="Bold" Background="#353388" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Transparent"/>
         <Label Content="22" FontSize="12" Foreground="White" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,30" VerticalAlignment="Top"/>

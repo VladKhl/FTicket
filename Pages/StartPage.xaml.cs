@@ -20,6 +20,7 @@ namespace FTicket.Pages
     /// </summary>
     public partial class StartPage : Page
     {
+        bool ishowpass = false;
         public StartPage()
         {
             InitializeComponent();

@@ -11,11 +11,12 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Images/mainim.PNG" Stretch="Fill"/>
+            <ImageBrush ImageSource="/Images/t2.png" Stretch="Fill"/>
         </Grid.Background>
+        <Image Source="/Images/logo.png" Width="300" Height="250" Stretch="Fill" Margin="302,15,298,335"/>
         <TextBox Name="login" MouseEnter="login_MouseEnter" HorizontalAlignment="Center" Width="250" Height="40" BorderBrush="Black" BorderThickness="2" Text="ЛОГИН" FontWeight="Bold" FontSize="25" TextAlignment="Center"/>
         <PasswordBox Name="password" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="250" Height="40" BorderBrush="Black" BorderThickness="2" Margin="0,120,0,0" FontWeight="Bold" FontSize="25"/>
-        <Button Name="SignIn" Content="ВХОД" Foreground="White" HorizontalAlignment="Center" Height="45" Width="250" Margin="0,393,0,120" BorderBrush="Black" FontWeight="Bold" FontSize="25" Background="#DA001A" Click="SignIn_Click"/>
-        <Button Name="Reg"  Content="РЕГИСТРАЦИЯ" Foreground="White" HorizontalAlignment="Center" Height="45" Width="250" Margin="0,430,0,50" BorderBrush="Black" FontWeight="Bold" FontSize="25" Background="#DA001A" Click="Reg_Click"/>
+        <Button Name="SignIn" Content="ВХОД" Foreground="Black" HorizontalAlignment="Center" Height="45" Width="250" Margin="0,393,0,120" BorderBrush="Black" FontWeight="Bold" FontSize="25" Background="#ffc500" Click="SignIn_Click"/>
+        <Button Name="Reg"  Content="РЕГИСТРАЦИЯ" Foreground="Black" HorizontalAlignment="Center" Height="45" Width="250" Margin="0,430,0,50" BorderBrush="Black" FontWeight="Bold" FontSize="25" Background="#ffc500" Click="Reg_Click"/>
     </Grid>
 </Page>

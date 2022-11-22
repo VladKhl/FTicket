@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:FTicket.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="900"
-      Title="AdmMainPage" Background="#353388">
+      Title="AdmMainPage" Background="#ffc500">
     <Grid>
         <Button Name="backbtn" Click="backbtn_Click" Content="НАЗАД" Width="50" Height="20" Foreground="White" FontWeight="Bold" Background="#353388" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Transparent"/>
         <Border Background="White" CornerRadius="10" Margin="30,30,0,30" HorizontalAlignment="Left">

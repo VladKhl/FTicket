@@ -66,6 +66,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Product.cs" />
     <Compile Include="Windows\SaleWin.xaml.cs">
       <DependentUpon>SaleWin.xaml</DependentUpon>
     </Compile>
@@ -214,9 +215,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\mainim.PNG" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="DB\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -227,10 +225,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Images\logo.png" />
+    <Resource Include="Images\t2.png" />
     <Resource Include="Images\backtick.png" />
-    <Resource Include="Images\stadium.PNG" />
-    <Resource Include="Images\cska.png" />
-    <Resource Include="Images\regim.PNG" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

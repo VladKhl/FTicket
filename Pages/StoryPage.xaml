@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:FTicket.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="900"
-      Title="StoryPage" Background="#353388">
+      Title="StoryPage" Background="#ffc500">
 
     <Grid>
         <Label Content="ИСТОРИЯ ПОКУПОК" FontSize="20" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:FTicket.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="900"
-      Title="ClientMainPage" Background="#353388">
+      Title="ClientMainPage" Background="#ffc500">
 
     <Grid>
         <ListView
